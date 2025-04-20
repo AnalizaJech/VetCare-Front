@@ -1,0 +1,56 @@
+<header class="fixed top-0 left-0 w-full bg-indigo-700 text-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <span (click)="scrollTo('hero')" class="text-xl font-bold tracking-tight cursor-pointer">VetCare</span>
+  
+      <!-- Botón hamburguesa -->
+        <button
+        *ngIf="!menuOpen"
+        (click)="menuOpen = true"
+        class="md:hidden focus:outline-none z-50"
+        >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        </button>
+
+  
+      <!-- Navegación escritorio -->
+      <nav class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a (click)="scrollTo('hero')" class="hover:underline cursor-pointer">Inicio</a>
+        <a (click)="scrollTo('beneficios')" class="hover:underline cursor-pointer">Beneficios</a>
+        <a (click)="scrollTo('testimonios')" class="hover:underline cursor-pointer">Testimonios</a>
+        <a routerLink="/login"
+           class="bg-white text-indigo-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition font-semibold">
+          Iniciar sesión
+        </a>
+      </nav>
+    </div>
+  
+    <!-- Menú móvil -->
+    <div *ngIf="menuOpen"
+         class="fixed top-0 left-0 w-full h-screen bg-indigo-700 text-white flex flex-col px-6 pt-6 space-y-6 text-lg z-40">
+  
+      <!-- Top: Logo + cerrar -->
+      <div class="flex justify-between items-center mb-6">
+        <span (click)="scrollTo('hero')"  class="text-xl font-bold tracking-tight">VetCare</span>
+        <!-- Cerrar menú (dentro del menú móvil) -->
+        <button (click)="menuOpen = false"
+        class="text-white text-3xl font-bold px-3 py-1 rounded hover:bg-indigo-600 transition">
+        &times;
+        </button>
+      </div>
+  
+      <!-- Opciones -->
+      <nav class="flex flex-col space-y-4">
+        <a (click)="scrollTo('hero')" class="hover:underline">Inicio</a>
+        <a (click)="scrollTo('beneficios')" class="hover:underline">Beneficios</a>
+        <a (click)="scrollTo('testimonios')" class="hover:underline">Testimonios</a>
+      </nav>
+    </div>
+  </header>
+  
