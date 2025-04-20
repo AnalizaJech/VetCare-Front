@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink],
+  imports: [RouterModule],
   templateUrl: './hero.component.html'
 })
 export class HeroComponent {
