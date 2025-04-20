@@ -4,6 +4,7 @@ import { BeneficiosComponent } from './components/beneficios/beneficios.componen
 import { TestimoniosComponent } from './components/testimonios/testimonios.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
 
 @Component({
   standalone: true,
@@ -12,6 +13,7 @@ import { NavbarComponent } from '../../shared/navbar/navbar.component';
   imports: [
     NavbarComponent,
     HeroComponent,
+    ServiciosComponent,
     BeneficiosComponent,
     TestimoniosComponent,
     FooterComponent,
